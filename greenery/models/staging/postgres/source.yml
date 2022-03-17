@@ -4,11 +4,33 @@ sources:
   - name: postgres
     database: dbt
     schema: public
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+#      error_after: {count: 48, period: hour} -- commented out because it will cause errors each time in the project
+
     tables:
+
       - name: addresses
+        description: Contains information about addresses
+
       - name: events
+        loaded_at_field: created_at
+        description: Contains information about events data
+
       - name: order_items
+        description: Contains information about items in an order
+
       - name: orders
+        loaded_at_field: created_at
+        description: Contains information about orders
+
       - name: products
+        description: Contains information about products
+
       - name: promos
+        description: Contains information about promotions
+
       - name: users
+        loaded_at_field: created_at
+        description: Contains information about users
