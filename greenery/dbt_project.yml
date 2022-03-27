@@ -40,3 +40,8 @@ models:
       +materialized: table
     staging:
       +materialized: view
+  post-hook:
+    "GRANT SELECT ON {{ this }} TO reporting"
+
+on-run-end:
+  - "GRANT USAGE ON SCHEMA {{ schema }} TO reporting"

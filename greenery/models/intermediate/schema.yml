@@ -1,0 +1,9 @@
+version: 2
+
+models:
+
+  - name: int_orders
+    description: Information about orders with promotional and address data added
+
+  - name: int_users
+    description: Information about users with address data added

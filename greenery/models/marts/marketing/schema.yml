@@ -1,0 +1,9 @@
+version: 2
+
+models:
+
+  - name: fct_orders_products
+    description: Contains product level data and includes additional order information
+
+  - name: fct_products_sessions_orders
+    description: Contains product level data about sessions to product pages and total purchases

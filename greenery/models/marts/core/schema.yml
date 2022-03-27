@@ -1,0 +1,7 @@
+version: 2
+
+models:
+
+  - name: fct_orders  
+
+  - name: fct_users_orders
