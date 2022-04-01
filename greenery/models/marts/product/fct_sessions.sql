@@ -17,6 +17,10 @@ sessions AS (
     MIN(events.created_at_utc) AS session_created_at_utc,
     {% for event_type in event_types %}
     SUM(CASE WHEN event_type = '{{event_type}}' THEN 1 ELSE 0 END) AS total_{{event_type}}_events
+    {% if not loop.last %},{% endif %}
+    {% endfor %} ,
+    {% for event_type in event_types %}
+    MAX(CASE WHEN event_type = '{{event_type}}' THEN 1 ELSE 0 END) AS had_{{event_type}}
     {% if not loop.last %},{% endif %}  
     {% endfor %}
 
