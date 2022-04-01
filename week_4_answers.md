@@ -71,7 +71,7 @@ I strongly believe that getting to know fundamentals on Macros/JINJA, Snapshots,
 
 Currently our scheduled dbt run has the following steps:
 
-1. dbt freshness
+1. dbt source freshness
 2. dbt run
 3. dbt test
 
